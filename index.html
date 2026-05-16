@@ -40,44 +40,52 @@
       </div>
     </div>
   </nav>
+  <section id="home" class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12">
 
-  <!-- HOME sections -->
-  <section id="home" class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center">
     <div class="flex-1 space-y-8">
-      <h1 class="text-5xl font-bold">Howdy, folks! I'm Tor 🖖</h1>
+
+      <h1 class="text-5xl md:text-6xl font-bold text-gray-900 tracking-tight">
+        Howdy, folks! I'm Tor 🖖
+      </h1>
+
       <p class="text-xl text-gray-500 max-w-2xl leading-relaxed">
-        A passionate AI Engineer 🚀 having some an experience of using to
-        building and edit Web applications.
+        A passionate <span class="font-bold text-indigo-700">AI Engineer 🚀</span> having some an experience of using to
+        building and edit <span class="font-bold text-indigo-700">Web Applications</span>.
       </p>
 
-      <div class="flex space-x-4 text-3xl">
-        <a href="https://github.com/thanawat-hub" target="_blank" class="text-gray-800 hover:text-black transition">
+      <div class="flex items-center gap-5 text-3xl">
+        <a href="https://github.com/thanawat-hub" target="_blank"
+          class="text-gray-800 transition-all duration-300 hover:-translate-y-1.5 hover:text-black inline-block">
           <i class="fab fa-github"></i>
         </a>
         <a href="https://www.linkedin.com/in/tor-thanawat/" target="_blank"
-          class="text-[#0077b5] hover:opacity-80 transition">
+          class="text-[#0077b5] transition-all duration-300 hover:-translate-y-1.5 hover:opacity-80 inline-block">
           <i class="fab fa-linkedin"></i>
         </a>
         <a href="https://www.facebook.com/thanawat.boonyasitpichai.7" target="_blank"
-          class="text-[#1877f2] hover:opacity-80 transition">
+          class="text-[#1877f2] transition-all duration-300 hover:-translate-y-1.5 hover:opacity-80 inline-block">
           <i class="fab fa-facebook"></i>
         </a>
-        <a href="https://llmtorrag.wordpress.com/" target="_blank" class="text-[#21759b] hover:opacity-80 transition">
+        <a href="https://llmtorrag.wordpress.com/" target="_blank"
+          class="text-[#21759b] transition-all duration-300 hover:-translate-y-1.5 hover:opacity-80 inline-block">
           <i class="fab fa-wordpress"></i>
         </a>
       </div>
 
       <div class="flex gap-4 pt-4">
-        <a href="files/Mr_Thanawat_B(AI_Engineer).pdf" download="Mr_Thanawat_B_AI_Engineer.pdf" target="_blank"
-          class="bg-[#55198b] text-white px-8 py-3 rounded-md font-bold hover:bg-purple-900 transition inline-block">
-          DOWNLOAD MY RESUME
-        </a>
+        <button id="openResumeBtn"
+          class="bg-[#55198b] text-white px-8 py-3 rounded-md font-bold hover:bg-purple-900 transition inline-block cursor-pointer shadow-sm">
+          VIEW RESUME
+        </button>
+      </div>
+
+    </div>
+    <div class="flex-1 mt-10 md:mt-0 flex justify-center md:justify-end">
+      <div class="max-w-md w-full overflow-hidden rounded-2xl shadow-md border border-gray-100">
+        <img src="images/Site-background-light.webp" alt="Developer Illustration" class="w-full h-auto object-cover" />
       </div>
     </div>
 
-    <div class="flex-1 mt-10 md:mt-0">
-      <img src="images/Site-background-light.webp" alt="Developer Illustration" class="w-full max-w-lg mx-auto" />
-    </div>
   </section>
 
   <!-- Skill sections -->
@@ -547,6 +555,67 @@
       </div>
     </div>
   </footer>
+
+  <!-- popup modal -->
+  <div id="resumeModal"
+    class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 opacity-0 pointer-events-none transition-opacity duration-300">
+
+    <div
+      class="relative w-full max-w-4xl h-[85vh] bg-white rounded-xl shadow-2xl flex flex-col transform scale-95 transition-transform duration-300"
+      id="modalContainer">
+
+      <div class="flex items-center justify-between px-6 py-4 border-b border-gray-100">
+        <h3 class="text-lg font-bold text-gray-900 flex items-center gap-2">
+          <i class="fas fa-file-pdf text-red-500"></i> Resume Preview
+        </h3>
+        <button id="closeResumeBtn"
+          class="text-gray-400 hover:text-gray-600 p-2 rounded-lg hover:bg-gray-100 transition cursor-pointer">
+          <i class="fas fa-times text-xl"></i>
+        </button>
+      </div>
+
+      <div class="flex-1 bg-gray-100 rounded-b-xl overflow-hidden">
+        <iframe src="images/files/Mr_Thanawat_B(AI_Engineer).pdf" class="w-full h-full border-0"></iframe>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById('openResumeBtn');
+    const closeBtn = document.getElementById('closeResumeBtn');
+    const modal = document.getElementById('resumeModal');
+    const modalContainer = document.getElementById('modalContainer');
+
+    // ฟังก์ชันเปิดพ็อปอัป
+    openBtn.addEventListener('click', () => {
+      modal.classList.remove('opacity-0', 'pointer-events-none');
+      modalContainer.classList.remove('scale-95');
+      modalContainer.classList.add('scale-100');
+      // บังคับให้ scroll ของหน้าเว็บหลักหยุดทำงานชั่วคราวเวลาเปิดพ็อปอัป
+      document.body.style.overflow = 'hidden';
+    });
+
+    // ฟังก์ชันปิดพ็อปอัป
+    const closeModal = () => {
+      modal.classList.add('opacity-0', 'pointer-events-none');
+      modalContainer.classList.remove('scale-100');
+      modalContainer.classList.add('scale-95');
+      document.body.style.overflow = '';
+    };
+
+    closeBtn.addEventListener('click', closeModal);
+
+    // ปิดพ็อปอัปเมื่อคลิกพื้นที่สีดำรอบข้าง (Overlay)
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+
+
 </body>
+
 
 </html>
