@@ -90,37 +90,52 @@
     </div>
     <div class="flex-1 mt-10 md:mt-0 flex justify-center md:justify-end">
       <div class="max-w-md w-full overflow-hidden rounded-2xl shadow-md border border-gray-100">
-        <img src="images/Site-background-light.webp" alt="Developer Illustration" class="w-full h-auto object-cover" />
+        <img src="images/activities/assemble.webp" alt="Developer Illustration" class="w-full h-auto object-cover" />
       </div>
     </div>
 
   </section>
 
   <!-- Skill sections -->
-  <section id="skills" class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12">
-    <div class="flex-1 w-full">
-      <img src="https://raw.githubusercontent.com/saadpasta/developerFolio/master/src/assets/lottie/build.svg"
-        alt="What I do" class="w-full max-w-md mx-auto" />
+  <section id="skills"
+    class="max-w-7xl mx-auto px-6 py-24 flex flex-col md:flex-row items-center gap-12 border-b border-gray-100">
+
+    <div class="flex-1 w-full flex justify-center">
+      <div
+        class="relative w-full max-w-md aspect-square overflow-hidden rounded-3xl shadow-sm hover:shadow-xl transition-shadow duration-500 group cursor-pointer border border-gray-100 bg-white p-2">
+
+        <img src="images/activities/what_i_do_reveal.png" alt="The Real Me (Revealed)"
+          class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out transform group-hover:scale-105" />
+
+        <img src="images/activities/what_i_do.png" alt="Wearing a Mask"
+          class="absolute inset-0 w-full h-full object-cover transition-all duration-700 ease-out transform opacity-100 group-hover:opacity-0 group-hover:scale-110" />
+
+        <div
+          class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 rounded-3xl">
+        </div>
+      </div>
     </div>
 
-    <div class="flex-1 space-y-8">
-      <h2 class="text-4xl font-bold">What I do</h2>
-      <p class="text-lg text-gray-500 uppercase tracking-widest font-medium">
-        Just developer who wants to explore tech stack
-      </p>
+    <div class="flex-1 w-full space-y-8">
 
+      <div class="space-y-2">
+        <h2 class="text-4xl font-bold text-gray-900 tracking-tight">What I do</h2>
+        <p class="text-sm md:text-base text-gray-500 uppercase tracking-widest font-semibold">
+          Just developer who wants to explore tech stack
+        </p>
+      </div>
 
       <div class="flex flex-wrap gap-8 text-5xl">
         <div class="group relative flex flex-col items-center">
           <i class="devicon-python-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 whitespace-nowrap">Python</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 whitespace-nowrap z-10">Python</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-html5-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">HTML5</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 z-10">HTML5</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
@@ -155,19 +170,19 @@
           <i
             class="devicon-azuresqldatabase-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">SQL</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 z-10">SQL</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-mongodb-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">MongoDB</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 z-10">MongoDB</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-fastapi-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">FastAPI</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 z-10">FastAPI</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
@@ -175,51 +190,46 @@
             class="w-12 h-12 object-contain transition-transform group-hover:scale-110 cursor-pointer"
             alt="LangChain" />
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-green-600 p-2 text-xs text-white group-hover:scale-100 whitespace-nowrap">LangChain</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-green-600 p-2 text-xs text-white group-hover:scale-100 whitespace-nowrap z-10">LangChain</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-git-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100">Git</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-gray-800 p-2 text-xs text-white group-hover:scale-100 z-10">Git</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-docker-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-blue-600 p-2 text-xs text-white group-hover:scale-100">Docker</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-blue-600 p-2 text-xs text-white group-hover:scale-100 z-10">Docker</span>
         </div>
 
         <div class="group relative flex flex-col items-center">
           <i class="devicon-figma-plain colored transition-transform group-hover:scale-110 cursor-pointer"></i>
           <span
-            class="absolute -top-10 scale-0 transition-all rounded bg-pink-600 p-2 text-xs text-white group-hover:scale-100">Figma</span>
+            class="absolute -top-10 scale-0 transition-all rounded bg-pink-600 p-2 text-xs text-white group-hover:scale-100 z-10">Figma</span>
         </div>
       </div>
 
-      <div class="space-y-4 text-gray-600">
+      <div class="space-y-4 text-gray-600 font-medium">
         <div class="flex items-start gap-3">
           <span class="text-yellow-500 text-xl">⚡</span>
-          <p>
-            <strong>Core Development:</strong> Strong in Python, building
-            robust backends with SQL and NoSQL databases like MongoDB.
-          </p>
+          <p><strong>Core Development:</strong> Strong in Python, building robust backends with SQL and NoSQL databases
+            like MongoDB.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="text-yellow-500 text-xl">⚡</span>
-          <p>
-            <strong>AI & LLM Orchestration:</strong> Developing advanced AI
-            agents using LangChain, LangSmith, and FastAPI.
-          </p>
+          <p><strong>AI & LLM Orchestration:</strong> Developing advanced AI agents using LangChain, LangSmith, and
+            FastAPI.</p>
         </div>
         <div class="flex items-start gap-3">
           <span class="text-yellow-500 text-xl">⚡</span>
-          <p>
-            <strong>Automation & Workflow:</strong> Streamlining processes
-            with N8N and Airflow for efficient data pipelines.
-          </p>
+          <p><strong>Automation & Workflow:</strong> Streamlining processes with N8N and Airflow for efficient data
+            pipelines.</p>
         </div>
       </div>
+
     </div>
   </section>
 
