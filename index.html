@@ -36,10 +36,15 @@
         <a href="#experience" class="hover:text-indigo-600 transition">Work Experiences</a>
         <a href="#achievements" class="hover:text-indigo-600 transition">Achievements</a>
         <a href="#blogs" class="hover:text-indigo-600 transition">Blogs</a>
-        <a href="#resume" class="hover:text-indigo-600 transition">Resume</a>
+        <button id="navResumeBtn"
+          class="text-gray-600 hover:text-indigo-600 transition cursor-pointer font-medium text-sm">
+          Resume
+        </button>
       </div>
     </div>
   </nav>
+
+  <!-- home sections -->
   <section id="home" class="max-w-7xl mx-auto px-6 py-20 flex flex-col md:flex-row items-center justify-between gap-12">
 
     <div class="flex-1 space-y-8">
@@ -582,31 +587,37 @@
   </div>
 
   <script>
-    const openBtn = document.getElementById('openResumeBtn');
-    const closeBtn = document.getElementById('closeResumeBtn');
+    // 1. ดึงปุ่มเปิดพ็อปอัป (ดึงมาทั้งปุ่มตรงกลางเว็บ และปุ่มบน Navbar)
+    const openHeroBtn = document.getElementById('openResumeBtn');
+    const openNavBtn = document.getElementById('navResumeBtn');
+
+    // 2. ดึงกล่องพ็อปอัปและปุ่มปิดกากบาท
     const modal = document.getElementById('resumeModal');
     const modalContainer = document.getElementById('modalContainer');
+    const closeBtn = document.getElementById('closeResumeBtn');
 
-    // ฟังก์ชันเปิดพ็อปอัป
-    openBtn.addEventListener('click', () => {
+    // ฟังก์ชันสั่ง "เปิดพ็อปอัป"
+    const openModal = () => {
       modal.classList.remove('opacity-0', 'pointer-events-none');
       modalContainer.classList.remove('scale-95');
       modalContainer.classList.add('scale-100');
-      // บังคับให้ scroll ของหน้าเว็บหลักหยุดทำงานชั่วคราวเวลาเปิดพ็อปอัป
-      document.body.style.overflow = 'hidden';
-    });
+      document.body.style.overflow = 'hidden'; // ล็อกไม่ให้หน้าเว็บหลักเลื่อนได้ตอนเปิดพรีวิว
+    };
 
-    // ฟังก์ชันปิดพ็อปอัป
+    // ฟังก์ชันสั่ง "ปิดพ็อปอัป"
     const closeModal = () => {
       modal.classList.add('opacity-0', 'pointer-events-none');
       modalContainer.classList.remove('scale-100');
       modalContainer.classList.add('scale-95');
-      document.body.style.overflow = '';
+      document.body.style.overflow = ''; // คืนค่าให้หน้าเว็บเลื่อนได้ปกติ
     };
 
-    closeBtn.addEventListener('click', closeModal);
+    // 3. ผูกคำสั่งเปิดพ็อปอัปเข้ากับทั้ง 2 ปุ่ม
+    if (openHeroBtn) openHeroBtn.addEventListener('click', openModal);
+    if (openNavBtn) openNavBtn.addEventListener('click', openModal);
 
-    // ปิดพ็อปอัปเมื่อคลิกพื้นที่สีดำรอบข้าง (Overlay)
+    // 4. ผูกคำสั่งปิดพ็อปอัป
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
     modal.addEventListener('click', (e) => {
       if (e.target === modal) {
         closeModal();
